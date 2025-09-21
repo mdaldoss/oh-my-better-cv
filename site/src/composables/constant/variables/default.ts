@@ -20,6 +20,7 @@ export const DEFAULT_STYLES = {
 
 export const DEFAULT_MD_CONTENT = `---
 name: Haha Ha
+photo: https://media.licdn.com/dms/image/v2/D4E03AQGyzorNxF-YmQ/profile-displayphoto-crop_800_800/B4EZjmhHnkGoAI-/0/1756214098900?e=1759363200&v=beta&t=YNmF9oUXuvogbb6hhxoat-emfxFUlxYJRopM3qrcxf4
 header:
   - text: |
       <span style="font-size: 1.2em; font-weight: bold;">Applying for: Cooking Engineer</span>
@@ -37,6 +38,8 @@ header:
 
 <!-- Important: When updating your email address, remember to change both the "text" (visible text) and the "link" (underlying hyperlink) fields. -->
 
+<!-- You can also add a profile photo using the [PHOTO]...[/PHOTO] syntax anywhere in your markdown: -->
+<!-- [PHOTO]https://example.com/your-photo.jpg[/PHOTO] -->
 
 ## Education
 
@@ -225,6 +228,35 @@ ${PREVIEW_SELECTOR} .resume-header h1 {
 
 ${PREVIEW_SELECTOR} .resume-header-item:not(.no-separator)::after {
   content: " | ";
+}
+
+/* Profile Photo */
+
+${PREVIEW_SELECTOR} .profile-photo-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+${PREVIEW_SELECTOR} .profile-photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--theme-color, #377bb5);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Profile photo in markdown content */
+${PREVIEW_SELECTOR} .profile-photo[data-photo-url] {
+  display: block;
+  margin: 20px auto;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--theme-color, #377bb5);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Citations */

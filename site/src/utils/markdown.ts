@@ -10,6 +10,7 @@ import LinkAttributes from "markdown-it-link-attributes";
 import MarkdownItKatex from "@ohmycv/markdown-it-katex";
 import MarkdownItCite from "@ohmycv/markdown-it-cross-ref";
 import MarkdownItLatexCmds from "@ohmycv/markdown-it-latex-cmds";
+import MarkdownItPhoto from "@ohmycv/markdown-it-photo";
 import { FrontMatterParser } from "@ohmycv/front-matter";
 
 type ResumeHeaderItem = {
@@ -20,6 +21,7 @@ type ResumeHeaderItem = {
 
 type ResumeFrontMatter = {
   readonly name?: string;
+  readonly photo?: string;
   readonly header?: Array<ResumeHeaderItem>;
 };
 
@@ -101,7 +103,12 @@ export class MarkdownService {
   }
 
   public renderHeader(frontMatter: ResumeFrontMatter) {
+    const photoHtml = frontMatter.photo 
+      ? `<div class="profile-photo-container"><img src="${frontMatter.photo}" alt="Profile Photo" class="profile-photo" /></div>`
+      : "";
+    
     const content = [
+      photoHtml,
       frontMatter.name ? `<h1>${frontMatter.name}</h1>\n` : "",
       (frontMatter.header ?? [])
         .map((item, i, array) =>
@@ -129,6 +136,7 @@ export const markdownService = new MarkdownService({
     MarkdownItKatex,
     MarkdownItCite,
     MarkdownItLatexCmds,
+    MarkdownItPhoto,
     [
       LinkAttributes,
       {
