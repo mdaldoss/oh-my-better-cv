@@ -50,6 +50,10 @@ toolbar:
         title: Heads up!
         content: When printing on Windows, please select "Save as PDF" in the print settings popup, <b>not</b> "Microsoft Print to PDF".
     export_md: Export Markdown
+  template:
+    title: Template
+    select: Select Template
+    categories: Categories
   correct_case:
     title: Correct Case
     example:

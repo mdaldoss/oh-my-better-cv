@@ -3,19 +3,22 @@ import { DEFAULT_MD_CONTENT, DEFAULT_CSS_CONTENT, DEFAULT_STYLES } from "./defau
 import type { ResumeStyles } from "../../stores/style";
 
 export type ResumeTemplate = {
-  /** Unique template id */
   id: string;
-  /** Human readable name */
   name: string;
-  /** Short description shown in the template picker */
   description: string;
-  /** Starter Markdown content */
   markdown: string;
-  /** Backbone CSS */
   css: string;
-  /** Default styles */
   styles: ResumeStyles;
+  preview: string;
+  category: string;
 };
+
+export type CVTemplate = ResumeTemplate;
+
+export const TEMPLATE_CATEGORIES = [
+  { id: "classic", name: "Classic", icon: "i-carbon:document" },
+  { id: "modern", name: "Modern", icon: "i-carbon:template" }
+];
 
 /**
  * Styles for the Swiss / International template.
@@ -309,7 +312,10 @@ export const RESUME_TEMPLATES: ResumeTemplate[] = [
       "The original academic-friendly layout: serif, justified, great for CVs with publications.",
     markdown: DEFAULT_MD_CONTENT,
     css: DEFAULT_CSS_CONTENT,
-    styles: DEFAULT_STYLES
+    styles: DEFAULT_STYLES,
+    category: "classic",
+    preview:
+      "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTQwIiB2aWV3Qm94PSIwIDAgMTAwIDE0MCI+PHJlY3Qgd2lkdGg9IjEwMCIgaGVpZ2h0PSIxNDAiIGZpbGw9IiNmZmYiIHN0cm9rZT0iI2RkZCIvPjx0ZXh0IHg9IjUwIiB5PSIxOCIgZm9udC1zaXplPSI5IiBmb250LXdlaWdodD0iYm9sZCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzMzMyI+Q2xhc3NpYzwvdGV4dD48cmVjdCB4PSIxMCIgeT0iMjUiIHdpZHRoPSI4MCIgaGVpZ2h0PSIxIiBmaWxsPSIjMzMzIi8+PHJlY3QgeD0iMTAiIHk9IjMyIiB3aWR0aD0iODAiIGhlaWdodD0iMiIgZmlsbD0iI2VlZSIvPjxyZWN0IHg9IjEwIiB5PSIzNyIgd2lkdGg9IjYwIiBoZWlnaHQ9IjIiIGZpbGw9IiNlZWUiLz48cmVjdCB4PSIxMCIgeT0iNDgiIHdpZHRoPSIzNSIgaGVpZ2h0PSIyIiBmaWxsPSIjNzc3Ii8+PHJlY3QgeD0iMTAiIHk9IjU1IiB3aWR0aD0iODAiIGhlaWdodD0iMiIgZmlsbD0iI2VlZSIvPjxyZWN0IHg9IjEwIiB5PSI2MCIgd2lkdGg9IjcwIiBoZWlnaHQ9IjIiIGZpbGw9IiNlZWUiLz48cmVjdCB4PSIxMCIgeT0iNzIiIHdpZHRoPSIzNSIgaGVpZ2h0PSIyIiBmaWxsPSIjNzc3Ii8+PHJlY3QgeD0iMTAiIHk9Ijc5IiB3aWR0aD0iODAiIGhlaWdodD0iMiIgZmlsbD0iI2VlZSIvPjxyZWN0IHg9IjEwIiB5PSI4NCIgd2lkdGg9Ijc1IiBoZWlnaHQ9IjIiIGZpbGw9IiNlZWUiLz48L3N2Zz4="
   },
   {
     id: "swiss",
@@ -318,7 +324,10 @@ export const RESUME_TEMPLATES: ResumeTemplate[] = [
       "Clean sans-serif layout tuned for the Swiss and international market, with a Languages (CEFR) section.",
     markdown: SWISS_MD_CONTENT,
     css: SWISS_CSS_CONTENT,
-    styles: SWISS_STYLES
+    styles: SWISS_STYLES,
+    category: "modern",
+    preview:
+      "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTQwIiB2aWV3Qm94PSIwIDAgMTAwIDE0MCI+PHJlY3Qgd2lkdGg9IjEwMCIgaGVpZ2h0PSIxNDAiIGZpbGw9IiNmZmYiIHN0cm9rZT0iI2RkZCIvPjx0ZXh0IHg9IjEwIiB5PSIxOCIgZm9udC1zaXplPSI5IiBmb250LXdlaWdodD0iYm9sZCIgZmlsbD0iIzFmNGU3OSI+U3dpc3M8L3RleHQ+PHJlY3QgeD0iMTAiIHk9IjI1IiB3aWR0aD0iODAiIGhlaWdodD0iMS41IiBmaWxsPSIjMWY0ZTc5Ii8+PHJlY3QgeD0iMTAiIHk9IjMyIiB3aWR0aD0iODAiIGhlaWdodD0iMiIgZmlsbD0iI2VlZSIvPjxyZWN0IHg9IjEwIiB5PSIzNyIgd2lkdGg9IjYwIiBoZWlnaHQ9IjIiIGZpbGw9IiNlZWUiLz48cmVjdCB4PSIxMCIgeT0iNDYiIHdpZHRoPSI0MCIgaGVpZ2h0PSIxLjUiIGZpbGw9IiMxZjRlNzkiLz48cmVjdCB4PSIxMCIgeT0iNTIiIHdpZHRoPSI4MCIgaGVpZ2h0PSIyIiBmaWxsPSIjZWVlIi8+PHJlY3QgeD0iMTAiIHk9IjU3IiB3aWR0aD0iNzAiIGhlaWdodD0iMiIgZmlsbD0iI2VlZSIvPjxyZWN0IHg9IjEwIiB5PSI2NiIgd2lkdGg9IjQwIiBoZWlnaHQ9IjEuNSIgZmlsbD0iIzFmNGU3OSIvPjxyZWN0IHg9IjEwIiB5PSI3MiIgd2lkdGg9IjgwIiBoZWlnaHQ9IjIiIGZpbGw9IiNlZWUiLz48cmVjdCB4PSIxMCIgeT0iNzciIHdpZHRoPSI3NSIgaGVpZ2h0PSIyIiBmaWxsPSIjZWVlIi8+PC9zdmc+"
   }
 ];
 

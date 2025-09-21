@@ -1,7 +1,7 @@
 import * as V from "./variables";
-import type { Font, ValidPaperSize, ValidVersion, ResumeTemplate } from "./variables";
+import type { Font, ValidPaperSize, ValidVersion, ResumeTemplate, CVTemplate } from "./variables";
 
-export type { Font, ValidPaperSize, ValidVersion, ResumeTemplate };
+export type { Font, ValidPaperSize, ValidVersion, ResumeTemplate, CVTemplate };
 
 export const useConstant = () => {
   const FONT = {
@@ -41,17 +41,19 @@ export const useConstant = () => {
     PRESET: V.PRESET_COLORS
   };
 
+  const TEMPLATE = {
+    LIST: V.RESUME_TEMPLATES,
+    CATEGORIES: V.TEMPLATE_CATEGORIES,
+    DEFAULT_ID: V.DEFAULT_TEMPLATE_ID,
+    getById: (id: string) => V.RESUME_TEMPLATES.find(t => t.id === id),
+    getByCategory: (category: string) => V.RESUME_TEMPLATES.filter(t => t.category === category)
+  };
+
   const DEFAULT = {
     RESUME_NAME: "New Resume",
     STYLES: V.DEFAULT_STYLES,
     MD_CONTENT: V.DEFAULT_MD_CONTENT,
     CSS_CONTENT: V.DEFAULT_CSS_CONTENT
-  };
-
-  const TEMPLATES = {
-    LIST: V.RESUME_TEMPLATES,
-    DEFAULT_ID: V.DEFAULT_TEMPLATE_ID,
-    get: V.getTemplate
   };
 
   const VERSION = {
@@ -68,8 +70,8 @@ export const useConstant = () => {
     PAPER,
     RENDER,
     COLOR,
+    TEMPLATE,
     DEFAULT,
-    TEMPLATES,
     VERSION
   };
 };
