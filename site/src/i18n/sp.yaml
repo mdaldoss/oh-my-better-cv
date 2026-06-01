@@ -29,6 +29,9 @@ dashboard:
   rename: Renombrar
   duplicate: Duplicar
   delete: Eliminar
+  template:
+    header: Elige una plantilla
+    desc: Elige un punto de partida. Podrás personalizarlo por completo después.
 
 toolbar:
   file:
@@ -83,3 +86,71 @@ notification:
   import:
     yes: Datos importados correctamente!
     no : Formato de datos inválido.
+  ai:
+    settings_saved: Configuración de IA guardada
+    master_saved: CV de referencia guardado
+    copied: Copiado al portapapeles
+    copy_failed: No se pudo copiar al portapapeles
+    error: Algo salió mal. Inténtalo de nuevo.
+
+tailor:
+  nav: Adaptar con IA
+  title: Adaptar mi CV
+  subtitle: Puntúa tu CV frente a una oferta, descubre qué falta y genera una versión adaptada con un clic.
+  empty: Añade tu CV de referencia y una descripción del puesto, luego evalúa o genera un CV adaptado.
+  error: La solicitud falló
+  not_configured:
+    title: Conecta un proveedor de IA para empezar
+    desc: Añade tu clave de API de Anthropic u OpenRouter. Se guarda solo en tu navegador.
+  master:
+    title: CV de referencia (contenido completo)
+    hint: Pega tu CV completo con cada puesto, proyecto y habilidad. Se guarda localmente y se reutiliza en cada versión adaptada.
+    placeholder: "Pega aquí tu CV completo (Markdown o texto plano)…"
+    upload: Subir archivo
+    save: Guardar
+    clear: Borrar
+    saved: "Guardado {time}"
+  job:
+    title: Descripción del puesto
+    placeholder: "Pega aquí la descripción / oferta de empleo…"
+  actions:
+    evaluate: Evaluar coincidencia
+    tailor: Crear CV adaptado
+  analysis:
+    match_score: Puntuación de coincidencia
+    core_points: De qué trata realmente este puesto
+    missing: Habilidades y conceptos clave a dominar
+    matched: Tus fortalezas coincidentes
+    keywords: Palabras clave a incluir
+    recommendations: Recomendaciones
+    importance:
+      high: Alta
+      medium: Media
+      low: Baja
+  result:
+    title: CV adaptado
+    copy: Copiar
+    download: Descargar
+    edit: Abrir en el editor
+    tab_preview: Vista previa
+    tab_edit: Editar Markdown
+
+ai:
+  settings:
+    title: Configuración de IA
+    desc: Elige un proveedor y añade tu clave de API. Todo se guarda localmente en tu navegador.
+    backend: Backend
+    provider: Proveedor
+    api_key: Clave de API
+    model: Modelo
+    byok_note: Tu clave se guarda solo en este navegador y se envía directamente al proveedor. Consigue una clave en
+    supabase_url: URL del proyecto Supabase
+    supabase_anon: Clave anon de Supabase
+    access_code: Código de acceso (opcional)
+    supabase_note: Enruta las solicitudes a través de una Edge Function de Supabase que guarda la clave en el servidor. La función se configura por separado.
+    mode_browser: Navegador (directo)
+    mode_browser_hint: Usa tu propia clave, sin backend
+    mode_supabase: Proxy de Supabase
+    mode_supabase_hint: La clave queda en el servidor
+    save: Guardar
+    cancel: Cancelar

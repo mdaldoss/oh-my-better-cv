@@ -59,6 +59,22 @@ export const useToast = () => {
     }
   };
 
+  const aiSettingsSaved = () => {
+    toast.success(t("notification.ai.settings_saved"));
+  };
+
+  const masterCvSaved = () => {
+    toast.success(t("notification.ai.master_saved"));
+  };
+
+  const copied = () => {
+    toast.success(t("notification.ai.copied"));
+  };
+
+  const aiError = (message: string) => {
+    toast.error(message || t("notification.ai.error"));
+  };
+
   return {
     save,
     switch: onSwitch,
@@ -66,6 +82,10 @@ export const useToast = () => {
     new: onNew,
     duplicate,
     correct,
-    import: onImport
+    import: onImport,
+    aiSettingsSaved,
+    masterCvSaved,
+    copied,
+    aiError
   };
 };

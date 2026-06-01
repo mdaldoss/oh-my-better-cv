@@ -63,8 +63,8 @@ export class StorageService {
     return updatedData;
   }
 
-  public async createResume() {
-    const { data, error } = await this._db.create(this._createEmptyResume());
+  public async createResume(resume?: DbResumeEmpty) {
+    const { data, error } = await this._db.create(resume ?? this._createEmptyResume());
 
     if (error) {
       // TODO: Use toast to show error message
