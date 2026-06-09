@@ -19,6 +19,8 @@ Have fun: [ohmycv.app](https://ohmycv.app/)
 
 ## Features
 
+- **AI CV Tailoring** ✨ — keep one full "master" CV, paste a job description, get a match score + the key skills you're missing, and generate a tailored, ready-to-edit CV in one click (see below)
+- Multiple templates, including a clean **Swiss / International** layout (with a CEFR Languages section)
 - Write your resume in Markdown and enjoy a real-time preview — it's smooth!
 - Export to PDF in A4 and US Letter sizes
 - Automatically paginate your resume like in Microsoft Word
@@ -38,6 +40,24 @@ Have fun: [ohmycv.app](https://ohmycv.app/)
   - No user tracking or ads
 - Dark mode
 
+
+&nbsp;
+
+## AI CV Tailoring
+
+Open **AI Tailor** from the header (`/tailor`):
+
+1. **Keep a reference CV** — paste or upload your complete CV (every role, project, skill). It's stored locally in your browser and reused for every tailored version.
+2. **Paste a job description** into the text box.
+3. **Evaluate match** — get an honest fit score, the core points the role is really about, the key skills/concepts you're missing (with how to address them), your matching strengths, and ATS keywords.
+4. **Create tailored CV** — generate a tailored CV that re-frames and highlights your most relevant experience for the role, **without inventing** anything.
+5. **Edit & download** — tweak the Markdown inline, open it in the full editor (it lands on the Swiss template), then export to PDF or download the Markdown.
+
+### Setup
+
+The feature is **local-first**. Open **AI Settings**, pick a provider (**Anthropic** or **OpenRouter**) and paste your API key — it's stored only in your browser and sent directly to the provider. Nothing is sent to any server of ours.
+
+Prefer to keep your key off the browser? There's an optional **Supabase Edge Function proxy** mode that holds the key server-side. See [`supabase/README.md`](supabase/README.md) for the schema and function (the app already has the client wiring — just switch the backend in AI Settings).
 
 &nbsp;
 

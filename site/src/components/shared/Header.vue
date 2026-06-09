@@ -8,6 +8,20 @@
     <div class="hstack">
       <UiButton
         :as="NuxtLink"
+        :to="$nuxt.$localePath('/tailor')"
+        variant="ghost-secondary"
+        size="xs"
+        class="h-8 gap-x-1"
+        :aria-label="$t('tailor.nav')"
+      >
+        <span class="i-tabler:wand text-lg text-primary" />
+        <span class="hide-on-mobile text-base">
+          {{ $t("tailor.nav") }}
+        </span>
+      </UiButton>
+
+      <UiButton
+        :as="NuxtLink"
         :to="$nuxt.$localePath('/dashboard')"
         variant="ghost-secondary"
         size="xs"

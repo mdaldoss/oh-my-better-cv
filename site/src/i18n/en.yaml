@@ -29,6 +29,9 @@ dashboard:
   rename: Rename
   duplicate: Duplicate
   delete: Delete
+  template:
+    header: Choose a template
+    desc: Pick a starting point. You can fully customise it afterwards.
 
 toolbar:
   file:
@@ -47,6 +50,10 @@ toolbar:
         title: Heads up!
         content: When printing on Windows, please select "Save as PDF" in the print settings popup, <b>not</b> "Microsoft Print to PDF".
     export_md: Export Markdown
+  template:
+    title: Template
+    select: Select Template
+    categories: Categories
   correct_case:
     title: Correct Case
     example:
@@ -83,3 +90,71 @@ notification:
   import:
     yes: Data has been successfully imported!
     no : Data format is invalid.
+  ai:
+    settings_saved: AI settings saved
+    master_saved: Reference CV saved
+    copied: Copied to clipboard
+    copy_failed: Could not copy to clipboard
+    error: Something went wrong. Please try again.
+
+tailor:
+  nav: AI Tailor
+  title: Tailor my CV
+  subtitle: Score your CV against a job, see what's missing, and generate a tailored version in one click.
+  empty: Add your reference CV and a job description, then run an evaluation or generate a tailored CV.
+  error: Request failed
+  not_configured:
+    title: Connect an AI provider to get started
+    desc: Add your Anthropic or OpenRouter API key. It is stored locally in your browser only.
+  master:
+    title: Reference CV (full content)
+    hint: Paste your complete CV with every role, project and skill. It is kept locally and reused for every tailored version.
+    placeholder: "Paste your full CV here (Markdown or plain text)…"
+    upload: Upload file
+    save: Save
+    clear: Clear
+    saved: "Saved {time}"
+  job:
+    title: Job description
+    placeholder: "Paste the job description / advert here…"
+  actions:
+    evaluate: Evaluate match
+    tailor: Create tailored CV
+  analysis:
+    match_score: Match score
+    core_points: What this role is really about
+    missing: Key skills & concepts to own
+    matched: Your matching strengths
+    keywords: Keywords to include
+    recommendations: Recommendations
+    importance:
+      high: High
+      medium: Medium
+      low: Low
+  result:
+    title: Tailored CV
+    copy: Copy
+    download: Download
+    edit: Open in editor
+    tab_preview: Preview
+    tab_edit: Edit Markdown
+
+ai:
+  settings:
+    title: AI Settings
+    desc: Choose a provider and add your API key. Everything is stored locally in your browser.
+    backend: Backend
+    provider: Provider
+    api_key: API key
+    model: Model
+    byok_note: Your key is stored only in this browser and sent directly to the provider. Get a key at
+    supabase_url: Supabase project URL
+    supabase_anon: Supabase anon key
+    access_code: Access code (optional)
+    supabase_note: Routes requests through a Supabase Edge Function that holds the key server-side. The function is wired up separately.
+    mode_browser: Browser (direct)
+    mode_browser_hint: Bring your own key, no backend
+    mode_supabase: Supabase proxy
+    mode_supabase_hint: Key stays server-side
+    save: Save
+    cancel: Cancel

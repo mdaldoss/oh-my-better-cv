@@ -29,6 +29,9 @@ dashboard:
   duplicate: 创建副本
   rename: 重命名
   delete: 删除
+  template:
+    header: 选择一个模板
+    desc: 选择一个起点，之后可以完全自定义。
 
 toolbar:
   file:
@@ -45,8 +48,12 @@ toolbar:
       title: 导出为 PDF
       alert:
         title: 注意
-        content: 在 Windows 上打印时，请在打印设置弹窗中选择“另存为 PDF”，而<b>不是</b>“Microsoft Print to PDF”。
+        content: 在 Windows 上打印时，请在打印设置弹窗中选择"另存为 PDF"，而<b>不是</b>"Microsoft Print to PDF"。
     export_md: 导出为 Markdown
+  template:
+    title: 模板
+    select: 选择模板
+    categories: 分类
   correct_case:
     title: 专有名词大小写修正
     example:
@@ -83,3 +90,71 @@ notification:
   import:
     yes: 已成功导入数据！
     no : 数据格式不正确
+  ai:
+    settings_saved: AI 设置已保存
+    master_saved: 参考简历已保存
+    copied: 已复制到剪贴板
+    copy_failed: 无法复制到剪贴板
+    error: 出错了，请重试。
+
+tailor:
+  nav: AI 定制
+  title: 定制我的简历
+  subtitle: 根据职位评估你的简历，找出欠缺之处，一键生成定制版本。
+  empty: 添加你的参考简历和职位描述，然后进行评估或生成定制简历。
+  error: 请求失败
+  not_configured:
+    title: 连接 AI 服务以开始
+    desc: 添加你的 Anthropic 或 OpenRouter API 密钥，仅保存在本地浏览器中。
+  master:
+    title: 参考简历（完整内容）
+    hint: 粘贴包含所有职位、项目和技能的完整简历。它会保存在本地，并用于每个定制版本。
+    placeholder: "在此粘贴完整简历（Markdown 或纯文本）…"
+    upload: 上传文件
+    save: 保存
+    clear: 清除
+    saved: "已保存 {time}"
+  job:
+    title: 职位描述
+    placeholder: "在此粘贴职位描述 / 招聘信息…"
+  actions:
+    evaluate: 评估匹配度
+    tailor: 生成定制简历
+  analysis:
+    match_score: 匹配分数
+    core_points: 这个职位的核心要点
+    missing: 需掌握的关键技能与概念
+    matched: 你已具备的优势
+    keywords: 应包含的关键词
+    recommendations: 建议
+    importance:
+      high: 高
+      medium: 中
+      low: 低
+  result:
+    title: 定制简历
+    copy: 复制
+    download: 下载
+    edit: 在编辑器中打开
+    tab_preview: 预览
+    tab_edit: 编辑 Markdown
+
+ai:
+  settings:
+    title: AI 设置
+    desc: 选择服务商并添加 API 密钥，所有内容仅保存在本地浏览器中。
+    backend: 后端
+    provider: 服务商
+    api_key: API 密钥
+    model: 模型
+    byok_note: 你的密钥仅保存在此浏览器中，并直接发送给服务商。获取密钥：
+    supabase_url: Supabase 项目 URL
+    supabase_anon: Supabase anon 密钥
+    access_code: 访问码（可选）
+    supabase_note: 通过 Supabase Edge Function 转发请求，密钥保存在服务端。该函数需单独配置。
+    mode_browser: 浏览器（直连）
+    mode_browser_hint: 使用自己的密钥，无需后端
+    mode_supabase: Supabase 代理
+    mode_supabase_hint: 密钥保存在服务端
+    save: 保存
+    cancel: 取消
