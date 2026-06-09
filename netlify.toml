@@ -1,0 +1,7 @@
+[build]
+  command = "pnpm build:pkg && pnpm --filter=site build"
+  publish = "site/.output/public"
+
+[build.environment]
+  NODE_VERSION = "20"
+  PNPM_VERSION = "9.4.0"
