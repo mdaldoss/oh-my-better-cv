@@ -49,6 +49,12 @@ export const useConstant = () => {
     getByCategory: (category: string) => V.RESUME_TEMPLATES.filter(t => t.category === category)
   };
 
+  const TEMPLATES = {
+    LIST: V.RESUME_TEMPLATES,
+    DEFAULT_ID: V.DEFAULT_TEMPLATE_ID,
+    get: V.getTemplate
+  };
+
   const DEFAULT = {
     RESUME_NAME: "New Resume",
     STYLES: V.DEFAULT_STYLES,
@@ -71,6 +77,7 @@ export const useConstant = () => {
     RENDER,
     COLOR,
     TEMPLATE,
+    TEMPLATES,
     DEFAULT,
     VERSION
   };
